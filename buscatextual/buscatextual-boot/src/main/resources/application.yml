@@ -1,0 +1,3 @@
+server:
+  context-path: /buscatextual-api
+  port: 8085
