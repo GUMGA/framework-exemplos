@@ -89,7 +89,7 @@ See [Documentação Presentation](https://gumga.github.io/assets/java-docs/prese
 License
 ----
 
-GPL-3.0
+LGPL-3.0
 
 
 **Free Software, Hell Yeah!**
