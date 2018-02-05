@@ -13,7 +13,9 @@
     * *Veja como utilizar o Gumga Gerador para criar uma aplicação completa e funcional automaticamente*
 * [Busca Textual](https://github.com/GUMGA/framework-exemplos/tree/develop/buscatextual)
     * *Faça buscas complexas a partir de um fragmento textual*
-    
+* [Serviços CRUD](https://github.com/GUMGA/framework-exemplos/tree/develop/servicosCRUD)
+    * *Entenda e manipule as entidades responsáveis pelos CRUD's do seu sistema*
+       
 License
 ----
 
