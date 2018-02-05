@@ -1,2 +1,0 @@
-# gumga-breadcrumb
-Gumga Breadcrumb

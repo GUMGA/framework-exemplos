@@ -1,7 +1,0 @@
-{
-    "undef": true,
-    "esversion": 6,
-    "globals": {
-      "angular": true
-    }
-}
