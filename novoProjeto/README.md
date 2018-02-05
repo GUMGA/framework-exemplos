@@ -263,7 +263,7 @@ Agora, se você optar por aprender mais sobre o que o framework oferece, sobre o
 License
 ----
 
-GPL-3.0
+LGPL-3.0
 
 
 **Free Software, Hell Yeah!**
