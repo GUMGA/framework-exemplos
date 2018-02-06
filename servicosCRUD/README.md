@@ -217,9 +217,9 @@ Passaremos no corpo da requisição o novo objeto JSON que irá substituir o reg
 ```json
 	{
 	"id" : "35ED5FD5B91F605F0A3602429876F82E",
-    "nome": "Willinha",
-    "idade": "25",
-    "peso": "74.0"
+	"nome": "Willinha",
+	"idade": "25",
+	"peso": "74.0"
 	}
 ```
 >Observe que, passamos no objeto o campo id do registro, isto é necessário pois o framework utiliza o JPA para fazer a manipulação do banco de dados
