@@ -1,5 +1,5 @@
 # Criando Seeds
--
+--
 [![](https://avatars3.githubusercontent.com/u/13262049?s=200&v=4)](https://github.com/GUMGA/frameworkbackend)
 <br>O Gumga Framework disponibiliza um utilitário para a criação de seeds, ou seja objetos das suas entidades para popular o banco de dados com valores iniciais
 As aplicações para isso vão desde o carregamento de dados, valores ou configurações padrão até testes de funcionalidades.
