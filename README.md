@@ -15,6 +15,11 @@
     * *Faça buscas complexas a partir de um fragmento textual*
 * [Serviços CRUD](https://github.com/GUMGA/framework-exemplos/tree/develop/servicosCRUD)
     * *Entenda e manipule as entidades responsáveis pelos CRUD's do seu sistema*
+* [Seeds](https://github.com/GUMGA/framework-exemplos/tree/master/seeds)
+    * *Crie instâncias de objetos para popular o banco de dados na inicialização do seu sistema*
+              
+       
+       
        
 License
 ----
