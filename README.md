@@ -10,13 +10,13 @@
 ###### *Clone, Share and Contribute! =)*
 
 * [Gerador gg](https://github.com/GUMGA/framework-exemplos/tree/develop/novoProjeto)<br>
-    * *Veja como utilizar o Gumga Gerador para criar uma aplicação completa e funcional automaticamente*
+    * *Veja como utilizar o Gumga Gerador para criar uma aplicação completa e funcional automaticamente*<br>
 * [Busca Textual](https://github.com/GUMGA/framework-exemplos/tree/develop/buscatextual)<br>
-    * *Faça buscas complexas a partir de um fragmento textual*
+    * *Faça buscas complexas a partir de um fragmento textual*<br>
 * [Serviços CRUD](https://github.com/GUMGA/framework-exemplos/tree/develop/servicosCRUD)<br>
-    * *Entenda e manipule as entidades responsáveis pelos CRUD's do seu sistema*
+    * *Entenda e manipule as entidades responsáveis pelos CRUD's do seu sistema*<br>
 * [Seeds](https://github.com/GUMGA/framework-exemplos/tree/master/seeds)<br>
-    * *Crie instâncias de objetos para popular o banco de dados na inicialização do seu sistema*
+    * *Crie instâncias de objetos para popular o banco de dados na inicialização do seu sistema*<br>
               
        
        
