@@ -9,13 +9,13 @@
 ###### *This repository is destinated to gather the documentation and practical examples of Gumga Framework*
 ###### *Clone, Share and Contribute! =)*
 
-* [Gerador gg](https://github.com/GUMGA/framework-exemplos/tree/develop/novoProjeto)
+* [Gerador gg](https://github.com/GUMGA/framework-exemplos/tree/develop/novoProjeto)<br>
     * *Veja como utilizar o Gumga Gerador para criar uma aplicação completa e funcional automaticamente*
-* [Busca Textual](https://github.com/GUMGA/framework-exemplos/tree/develop/buscatextual)
+* [Busca Textual](https://github.com/GUMGA/framework-exemplos/tree/develop/buscatextual)<br>
     * *Faça buscas complexas a partir de um fragmento textual*
-* [Serviços CRUD](https://github.com/GUMGA/framework-exemplos/tree/develop/servicosCRUD)
+* [Serviços CRUD](https://github.com/GUMGA/framework-exemplos/tree/develop/servicosCRUD)<br>
     * *Entenda e manipule as entidades responsáveis pelos CRUD's do seu sistema*
-* [Seeds](https://github.com/GUMGA/framework-exemplos/tree/master/seeds)
+* [Seeds](https://github.com/GUMGA/framework-exemplos/tree/master/seeds)<br>
     * *Crie instâncias de objetos para popular o banco de dados na inicialização do seu sistema*
               
        
