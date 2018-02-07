@@ -47,12 +47,6 @@ public class Carrinho extends GumgaModelUUID {
         this.itens = itens;
     }
 
-//    public List<Produto> getProdutos() {
-//		return this.produtos;
-//	}
-//	public void setProdutos(List<Produto> produtos) {
-//		this.produtos = produtos;
-//	}
 
 	public Double getValorFrete() {
 		return this.valorFrete;
