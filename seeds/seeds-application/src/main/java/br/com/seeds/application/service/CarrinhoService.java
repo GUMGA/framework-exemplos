@@ -30,12 +30,20 @@ public class CarrinhoService extends GumgaService<Carrinho, String> {
     @Transactional
     public Carrinho loadCarrinhoFat(String id) {
         Carrinho obj = view(id);
-
+        /**
+         * Este método carrega o carrinho com todas as suas associações,
+         * ou seja, busca todos os itens associados ao carrinho referenciado
+         */
             Hibernate.initialize(obj.getItens());
 
 
         return obj;
     }
+
+    /**
+     * Verifica se já existem instâncias dessa entidade salva no banco de dados
+     * @return
+     */
     public boolean hasData(){
         return repositoryCarrinho.count() > 0;
     }

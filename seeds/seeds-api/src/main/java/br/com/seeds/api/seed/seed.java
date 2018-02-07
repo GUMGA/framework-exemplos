@@ -13,6 +13,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ * Esta classe implementa os métodos que são chamados na inicialização do sistema,
+ * fazendo a chamada de implementação dos seeds
+ */
 @Component
 class Seed implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -26,12 +30,17 @@ class Seed implements ApplicationListener<ContextRefreshedEvent> {
 
     private AtomicBoolean started = new AtomicBoolean(false);
 
+
     @Autowired
     private ProdutoSeed produtoSeed;
 
     @Autowired
     private CarrinhoSeed carrinhoSeed;
 
+    /**
+     * Chama uma lista com os objetos que contém os seeds a serem persistidos
+     * @param event
+     */
     public void onApplicationEvent(ContextRefreshedEvent event) {
         if (started.get()) {
             return;
@@ -55,6 +64,7 @@ class Seed implements ApplicationListener<ContextRefreshedEvent> {
         List<AppSeed> list = new LinkedList<>();
         list.add(produtoSeed);
         list.add(carrinhoSeed);
+        // Basta adicionar a list objetos correspondentes as classes de seeds criadas
         return list;
     }
 

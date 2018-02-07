@@ -29,13 +29,23 @@ public class CarrinhoSeed implements AppSeed {
     @Autowired
     private GumgaLoggerService gumgaLoggerService;
 
+    /**
+     * Método para a instanciação dos objetos a serem persistidos na inicialização do servidor;
+     * Você pode implementar qualquer tipo de lógica para a obtenção desses dados, inclusive
+     * fazer chamada a uma API externa para geração de informações;
+     * <p>
+     * Neste exemplo criamos algumas instancias de maneira manual, utilizando o construtor que criamos
+     * na classe Carrinho {@link Carrinho}
+     * a atribuição de itens ao carrinho está sendo feita de maneira aleatória, tanto a quantidade
+     * de ítens no carrinho quanto quais itens são estes
+     */
     @Override
     public void loadSeed() throws IOException {
         if (carrinhoService.hasData()) {
+            /**Este if verifica se já existem objetos desta entidade persistidos*/
             gumgaLoggerService.logToFile("Dados encontrados no repositório", 1);
-            System.out.println("++++++++++++Dados encontrados no repositório++++++++++++");
+            System.out.println("Dados encontrados no repositório");
             return;
-
         }
         Carrinho carrinho1 = new Carrinho(9.90, "Caio");
         Carrinho carrinho2 = new Carrinho(10.90, "Mateus");
@@ -49,7 +59,6 @@ public class CarrinhoSeed implements AppSeed {
         List<Produto> produtos = produtoService.pesquisa(new QueryObject()).getValues();
         for (Carrinho c : carrinhos) {
             int index = random.nextInt(produtos.size());
-            System.out.println("------------------------------------  indice  " + index);
             for (int i = 0; i < index + 1; i++) {
                 System.out.println(c.getNomeUsuario());
                 c.getItens().add(new ItemCarrinho(produtos.get(random.nextInt(produtos.size()))));

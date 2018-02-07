@@ -9,6 +9,9 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
+/**
+ * Classe que implementa a criação do seed de produto
+ */
 @Component
 public class ProdutoSeed implements AppSeed {
 
@@ -18,9 +21,20 @@ public class ProdutoSeed implements AppSeed {
     @Autowired
     GumgaLoggerService gumgaLoggerService;
 
+    /**
+     * Método para a instanciação dos objetos a serem persistidos na inicialização do servidor;
+     * Você pode implementar qualquer tipo de lógica para a obtenção desses dados, inclusive
+     * fazer chamada a uma API externa para geração de informações;
+     *
+     * Neste exemplo criamos algumas instancias de maneira manual, utilizando o construtor que criamos
+     * na classe Produto {@link Produto}
+     * @throws IOException
+     */
     @Override
     public void loadSeed() throws IOException {
+
         if (produtoService.hasData()) {
+            /**Este if verifica se já existem objetos desta entidade persistidos*/
             gumgaLoggerService.logToFile("Dados encontrados no repositório", 1);
             return;
         }
@@ -38,6 +52,11 @@ public class ProdutoSeed implements AppSeed {
         produtoService.save(produto6);
         Produto produto7 = new Produto("Mouse sem Fio", 199.90, 0.6);
         produtoService.save(produto7);
+        /**
+         * A chamada do método produtoService.save utiliza do próprio serviço CRUD implementado
+         * para manipular os seeds no banco de dados
+         * {@link ProdutoService}
+         */
 
     }
 }

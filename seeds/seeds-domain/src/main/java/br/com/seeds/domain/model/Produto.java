@@ -30,6 +30,12 @@ public class Produto extends GumgaModelUUID {
 
     public Produto() {}
 
+	/**
+	 * Criamos um construtor para facilitar na hora de criar as instância do seed
+	 * @param nome String com o nome do produto
+	 * @param valor double com o valor sugerido do produto
+	 * @param peso double com o peso para cálculo do frete
+	 */
 	public Produto(String nome, Double valor, Double peso) {
 		this.nome = nome;
 		this.valor = valor;

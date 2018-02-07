@@ -28,7 +28,10 @@ public class ProdutoService extends GumgaService<Produto, String> {
         this.repositoryProduto = repository;
     }
 
-
+    /**
+     * Verifica se já existem instâncias dessa entidade salva no banco de dados
+     * @return
+     */
     public boolean hasData() {
         return repositoryProduto.count() > 0;
     }

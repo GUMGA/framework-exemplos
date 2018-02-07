@@ -12,6 +12,9 @@ import org.hibernate.envers.Audited;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Columns;
 
+/**
+ * Classe intermediária para relacionar produto com carrinho
+ */
 @GumgaMultitenancy
 @Audited
 @Entity(name = "ItemCarrinho")
@@ -27,6 +30,7 @@ public class ItemCarrinho extends GumgaModelUUID {
 	private Integer quantidade;
 
     public ItemCarrinho() {}
+
 
 	public ItemCarrinho(Produto produto) {
     	this.quantidade = 1;

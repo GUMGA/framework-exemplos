@@ -22,9 +22,6 @@ public class Carrinho extends GumgaModelUUID {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ItemCarrinho> itens = new ArrayList<>();
-
-//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-//	private List<Produto> produtos = new ArrayList<>();
     @Column(name = "valorFrete")
 	private Double valorFrete;
     @Column(name = "nomeUsuario")
@@ -32,6 +29,11 @@ public class Carrinho extends GumgaModelUUID {
 
     public Carrinho() {}
 
+    /**
+     * Construtor para facilitar na hora de instanciar os objetos
+     * @param valorFrete Fator multiplicativo para cálculo de frete
+     * @param nomeUsuario Nome do usuário correspondente ao carrinho
+     */
 	public Carrinho(Double valorFrete, String nomeUsuario) {
 		this.valorFrete = valorFrete;
 		this.nomeUsuario = nomeUsuario;

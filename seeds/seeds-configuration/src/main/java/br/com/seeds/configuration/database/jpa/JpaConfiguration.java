@@ -60,7 +60,7 @@ public class JpaConfiguration {
         properties.setProperty("hibernate.jdbc.batch_size", getProperties().getProperty("hibernate.jdbc.batch_size", "50"));
         properties.setProperty("hibernate.dialect", getProperties().getProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect"));
 
-        properties.put("hibernate.hbm2ddl.auto", "create");
+        properties.put("hibernate.hbm2ddl.auto", "update");
 //        properties.put("liquibase.enabled", "false");
 //        properties.put("liquibase.drop-first","true");
 //        properties.put("liquibase.change-log","src/main/resources/liquibase/changelog-master.xml");
