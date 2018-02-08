@@ -7,7 +7,10 @@ import java.util.*;
 import java.math.BigDecimal;
 import javax.persistence.*;
 import javax.validation.constraints.*;
+
+import io.gumga.domain.GumgaSharedModelUUID;
 import io.gumga.domain.domains.*;
+import io.gumga.domain.shared.GumgaSharedModel;
 import org.hibernate.envers.Audited;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Columns;
@@ -18,7 +21,7 @@ import org.hibernate.annotations.Columns;
 @Table(name = "Carrinho", indexes = {
     @Index(name = "Carrinho_gum_oi", columnList = "oi")
 })
-public class Carrinho extends GumgaModelUUID {
+public class Carrinho extends GumgaSharedModelUUID {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ItemCarrinho> itens = new ArrayList<>();
@@ -61,4 +64,5 @@ public class Carrinho extends GumgaModelUUID {
 	public void setNomeUsuario(String nomeUsuario) {
 		this.nomeUsuario = nomeUsuario;
 	}
+
 }

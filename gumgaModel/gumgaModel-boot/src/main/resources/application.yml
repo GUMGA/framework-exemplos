@@ -1,0 +1,6 @@
+server:
+  context-path: /gumgaModel-api
+spring:
+  h2:
+    console:
+      enabled: true
