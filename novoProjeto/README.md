@@ -1,10 +1,10 @@
-# GG Gerador
+# Gerador de projetos GG
 
 [![](httpsa://avatars3.githubusercontent.com/u/13262049?s=200&v=4)](https://github.com/GUMGA/frameworkbackend)
 #### Este exemplo se refere ao gerador de projetos gg.
 Esta ferramenta tem como funcionalidade facilitar a criação de novos projetos utilizando o *Gumga Framework*
 Ela gera uma estrutura de arquitetura completa com funcionalidades CRUD e persistência, além de interface web funcional.
-> Este guia é baseado no sistema operacional Linux Ubuntu
+> Este guia é baseado no sistema operacional Linux Ubuntu, porém o GG funciona também nos sistemas operacionais Windows e MACos
 ## Instalação
 #### Pré-requisitos
 * [ *Java 8*](http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html)
