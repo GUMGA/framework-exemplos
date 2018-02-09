@@ -1,5 +1,7 @@
 package br.com.gumgaModel.api.seed;
 
+import br.com.gumgaModel.domain.model.PessoaSharedAleatId;
+import br.com.gumgaModel.domain.model.PessoaSharedSeqId;
 import io.gumga.application.GumgaLoggerService;
 import io.gumga.domain.seed.AppSeed;
 import br.com.gumgaModel.configuration.security.RegisterApplication;
@@ -26,8 +28,15 @@ class Seed implements ApplicationListener<ContextRefreshedEvent> {
 
     @Autowired
     PessoaAleatorioIdSeed pessoaAleatorioIdSeed;
+
     @Autowired
     PessoaSequenciaIdSeed pessoaSequenciaIdSeed;
+
+    @Autowired
+    PessoaSharedSeqIdSeed pessoaSharedSeqIdSeed;
+
+    @Autowired
+    PessoaSharedAleatIdSeed pessoaSharedAleatIdSeed;
 
     public void onApplicationEvent(ContextRefreshedEvent event) {
         if (started.get()) {
@@ -52,6 +61,10 @@ class Seed implements ApplicationListener<ContextRefreshedEvent> {
         List<AppSeed> list = new LinkedList<>();
         list.add(pessoaAleatorioIdSeed);
         list.add(pessoaSequenciaIdSeed);
+
+        list.add(pessoaSharedAleatIdSeed);
+        list.add(pessoaSharedSeqIdSeed);
+
         return list;
     }
 

@@ -26,11 +26,11 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("/api/pessoasharedseqid")
 @Transactional
-public class PessoaSharedSeqIdAPI extends GumgaAPI<PessoaSharedSeqId, String> {
+public class PessoaSharedSeqIdAPI extends GumgaAPI<PessoaSharedSeqId, Long> {
 
 
     @Autowired
-    public PessoaSharedSeqIdAPI(GumgaService<PessoaSharedSeqId, String> service) {
+    public PessoaSharedSeqIdAPI(GumgaService<PessoaSharedSeqId, Long> service) {
         super(service);
     }
 

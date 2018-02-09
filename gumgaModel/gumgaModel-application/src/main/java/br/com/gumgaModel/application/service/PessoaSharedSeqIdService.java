@@ -15,7 +15,7 @@ import br.com.gumgaModel.domain.model.PessoaSharedSeqId;
 
 @Service
 @Transactional
-public class PessoaSharedSeqIdService extends GumgaService<PessoaSharedSeqId, String> {
+public class PessoaSharedSeqIdService extends GumgaService<PessoaSharedSeqId, Long> {
 
     private final static Logger LOG = LoggerFactory.getLogger(PessoaSharedSeqIdService.class);
     private final PessoaSharedSeqIdRepository repositoryPessoaSharedSeqId;
@@ -24,6 +24,10 @@ public class PessoaSharedSeqIdService extends GumgaService<PessoaSharedSeqId, St
     public PessoaSharedSeqIdService(PessoaSharedSeqIdRepository repository) {
         super(repository);
         this.repositoryPessoaSharedSeqId = repository;
+    }
+
+    public boolean hasData(){
+        return repositoryPessoaSharedSeqId.count() > 0;
     }
 
 }

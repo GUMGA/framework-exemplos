@@ -5,4 +5,4 @@ import br.com.gumgaModel.domain.model.PessoaSharedSeqId;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PessoaSharedSeqIdRepository extends GumgaCrudRepository<PessoaSharedSeqId, String> {}
+public interface PessoaSharedSeqIdRepository extends GumgaCrudRepository<PessoaSharedSeqId, Long> {}

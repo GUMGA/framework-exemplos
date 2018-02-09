@@ -7,10 +7,15 @@ import java.util.*;
 import java.math.BigDecimal;
 import javax.persistence.*;
 import javax.validation.constraints.*;
+
+import io.gumga.domain.GumgaSharedModelUUID;
 import io.gumga.domain.domains.*;
+import io.gumga.domain.shared.GumgaSharedModel;
 import org.hibernate.envers.Audited;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Columns;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 @GumgaMultitenancy
 @Audited
@@ -18,8 +23,15 @@ import org.hibernate.annotations.Columns;
 @Table(name = "PessoaSharedSeqId", indexes = {
     @Index(name = "PessoaSharedSeqId_gum_oi", columnList = "oi")
 })
-public class PessoaSharedSeqId extends GumgaModelUUID {
-
+/**
+ * Quando estamos utilizando o GumgaModel<ID>, o id dos objetos instanciados serão sequenciais
+ * Por isso precisamos configurar um gerador de sequência para que o hibernate possa utilizar
+ * para isto, devemos adicionar a anotação @SequenceGenerator passando os parâmetros como o
+ * exemplo a seguir
+ */
+@Component
+@SequenceGenerator(name = GumgaModel.SEQ_NAME, sequenceName = "SEQ_PessoaSharedSeqId")
+public class PessoaSharedSeqId extends GumgaSharedModel<Long> {
 
     @Column(name = "nome")
 	private String nome;

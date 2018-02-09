@@ -7,10 +7,14 @@ import java.util.*;
 import java.math.BigDecimal;
 import javax.persistence.*;
 import javax.validation.constraints.*;
+
+import io.gumga.domain.GumgaSharedModelUUID;
 import io.gumga.domain.domains.*;
+import io.gumga.domain.shared.GumgaSharedModel;
 import org.hibernate.envers.Audited;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Columns;
+import org.springframework.stereotype.Component;
 
 @GumgaMultitenancy
 @Audited
@@ -18,7 +22,8 @@ import org.hibernate.annotations.Columns;
 @Table(name = "PessoaSharedAleatId", indexes = {
     @Index(name = "PessoaSharedAleatId_gum_oi", columnList = "oi")
 })
-public class PessoaSharedAleatId extends GumgaModelUUID {
+@Component
+public class PessoaSharedAleatId extends GumgaSharedModelUUID {
 
 
     @Column(name = "nome")
@@ -32,14 +37,14 @@ public class PessoaSharedAleatId extends GumgaModelUUID {
 
     public PessoaSharedAleatId() {}
 
-	public PessoaSharedAleatId(String nome, Integer idade, Double altura, Double peso) {
-		this.nome = nome;
-		this.idade = idade;
-		this.altura = altura;
-		this.peso = peso;
-	}
+    public PessoaSharedAleatId(String nome, Integer idade, Double altura, Double peso) {
+        this.nome = nome;
+        this.idade = idade;
+        this.altura = altura;
+        this.peso = peso;
+    }
 
-	public String getNome() {
+    public String getNome() {
 		return this.nome;
 	}
 	public void setNome(String nome) {

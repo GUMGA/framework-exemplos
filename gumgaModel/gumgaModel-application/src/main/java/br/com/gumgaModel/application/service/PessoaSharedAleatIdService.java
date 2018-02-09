@@ -26,4 +26,8 @@ public class PessoaSharedAleatIdService extends GumgaService<PessoaSharedAleatId
         this.repositoryPessoaSharedAleatId = repository;
     }
 
+    public boolean hasData(){
+        return repositoryPessoaSharedAleatId.count() > 0;
+    }
+
 }
