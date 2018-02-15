@@ -19,6 +19,9 @@
     * *Crie instâncias de objetos para popular o banco de dados na inicialização do seu sistema*<br>
 * [GumgaModel](https://github.com/GUMGA/framework-exemplos/tree/develop/gumgaModel)<br>
     * *Entenda o funcionamento das classes de modelo do framework para geração de entidade, id's etc.*<br>
+* [Variaveis de Ambiente](https://github.com/GUMGA/framework-exemplos/tree/master/variavelAmbiente)<br>
+    * *Manipule variáveis de ambiente dentro do sistema*<br>
+
 
 
 
