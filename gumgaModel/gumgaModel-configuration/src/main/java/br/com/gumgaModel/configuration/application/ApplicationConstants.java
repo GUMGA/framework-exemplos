@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.Properties;
 
 
@@ -49,4 +50,5 @@ public class ApplicationConstants implements GumgaValues {
     public String getSoftwareName() {
         return "br.com.gumgaModel";
     }
+
 }
