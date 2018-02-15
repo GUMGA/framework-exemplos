@@ -1,11 +1,10 @@
-package br.com.gumgaModel.configuration.application;
+package br.com.variavelAmbiente.configuration.application;
 
 import io.gumga.core.GumgaValues;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.util.Properties;
 
 
@@ -37,18 +36,17 @@ public class ApplicationConstants implements GumgaValues {
 
     @Override
     public String getCustomPropertiesFileName() {
-        return "gumgaModel.properties";
+        return "variavelAmbiente.properties";
     }
 
     @Override
     public String getGumgaNLPBasePackage() {
-        return "br.com.gumgaModel.domain";
+        return "br.com.variavelAmbiente.domain";
     }
 
 
     @Override
     public String getSoftwareName() {
-        return "br.com.gumgaModel";
+        return "br.com.variavelAmbiente";
     }
-
 }

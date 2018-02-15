@@ -1,0 +1,7 @@
+server:
+  context-path: /variavelAmbiente-api
+variavel:
+  var1: Variáveis lidas com sucesso!
+  var2: Aqui você pode definir Valores e variáveis para acesso global no sistema
+  var3: Diretório do arquivo applicaton.yml
+  var4: /user.home/framework-exemplos/variavelAmbiente/variavelAmbiente-boot/src/main/resources/application.yml

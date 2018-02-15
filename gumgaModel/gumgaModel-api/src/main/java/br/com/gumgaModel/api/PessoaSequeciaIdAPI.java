@@ -31,6 +31,7 @@ public class PessoaSequeciaIdAPI extends GumgaAPI<PessoaSequeciaId, Long> {
 
     @Autowired
     public PessoaSequeciaIdAPI(GumgaService<PessoaSequeciaId, Long> service) {
+
         super(service);
     }
 
