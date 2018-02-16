@@ -5,4 +5,4 @@ import br.com.persistencia.domain.model.Produto;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProdutoRepository extends GumgaCrudRepository<Produto, String> {}
+public interface ProdutoRepository extends GumgaCrudRepository<Produto, Long> {}

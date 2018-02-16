@@ -113,7 +113,6 @@ private Properties commonProperties() {
 //        properties.put("liquibase.enabled", "false");
 //        properties.put("liquibase.drop-first","false");
 //        properties.put("liquibase.change-log","src/main/resources/liquibase/changelog-master.xml");
-
     return properties;
 }
 
@@ -137,3 +136,70 @@ Observe que, o método **commonProperties()** busca as variáveis no arquivo de 
 
  O projeto de exemplo possui uma modelagem de Produto e Carrinho com campos bem simples e alguns seeds para a visualização da modificação dos bancos de dados.
  > Caso tenha dúvidas a respeito de como criar e manipular entidades de modelagem ou seeds, veja os exemplos específicos na documentação do Gumga Framework
+
+ Ao subir a aplicação, o Gumga Framework vai procurar o arquivo de propriedades na pasta do usuário, e não encontrando, será inicializado o banco de dados H2 em memória.<br>
+ Uma vez que o servidor esteja rodando podemos acessar o console H2 direto no navegador no seguinte endereço:
+ ```url
+ http://*servidor*/persistencia-api/h2-console/
+ ```
+ > Para que este console seja ativado na execução da aplicação, é necessário adicionar a variável de ambiente **h2.console.enabled: true** para que o Spring possa habilita-lo.<br>
+ Na aplicação exemplo esta variável está declarada no <br> */persistencia/persistencia-boot/src/main/resources/application.yml*
+
+Acessando o console no navegador temos a seguinte tela:
+
+
+[![](https://raw.githubusercontent.com/GUMGA/framework-exemplos/master/persistencia/imagens/h2Console.png)]
+
+Os dados de acesso são:
+```
+JDBC URL: jdbc:h2:mem:studio;MVCC=true
+User Name: sa
+Password: sa
+```
+Podemos ver que os dados de Produto estão persistidos corretamente no banco de dados
+# selectH2
+
+Agora, vamos alternar para outro banco de dados. Para isso basta que adicionemos à pasta *gumgafiles* o arquivo de propriedades da aplicação.
+Copie o arquivo **\*/persistencia/persistencia.properties** para a pasta **\*user.home\*/gumgafiles/** e o configure de acordo com o seu banco de dados.
+> Lembre-se que para reproduzir este exemplo você precisa de um serviço de banco de dados válido em execução.
+
+Aqui iremos utilizar o MySQL, logo no arquivo **persistencia.properties** fizemos a seguinte configuração:
+```sql
+#Datasource
+name = MYSQL
+dataSource.className = com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+dataSource.url = jdbc:mysql://localhost:3306/persistencia?zeroDateTimeBehavior=convertToNull&useUnicode=yes&characterEncoding=utf8&createDatabaseIfNotExist=true
+dataSource.user = root
+dataSource.password = senha
+```
+Vamos subir a aplicação novamente.<br>
+Observe que, basta que as configurações de acesso ao banco de dados sejam válidas no arquivo de propriedades alocado no diretório gumgafiles, que o framework se encarrega de gerenciar o banco de dados, tornando toda a implementação transparente ao usuário!
+
+> Caso esteja usando outro tipo de banco de dados, talvez seja necessário criar o schema ou user com o nome declarado no .properties. No caso do MySQL podemos passar o parâmetro **createDatabaseIfNotExist=true** diretamente na url, fazendo com que o schema seja criado caso ainda não exista.
+
+Vamos verificar os dados no console do MySQL:
+```
+mysql> select * from Produto;
++----+------+-------------+---------------------+------+------------+
+| id | oi   | margemLucro | nome                | peso | precoCusto |
++----+------+-------------+---------------------+------+------------+
+|  1 | NULL |          50 | Cartão de Memória   | 0.09 |       89.9 |
+|  2 | NULL |          48 | Placa Mãe           | 2.12 |      569.9 |
+|  3 | NULL |          80 | Fone Headset        | 1.79 |      128.5 |
+|  4 | NULL |          16 | Monitor Gamer       |  5.9 |      799.9 |
+|  5 | NULL |          23 | Processador         | 1.25 |     1289.9 |
+|  6 | NULL |          98 | Antivírus           |    0 |       69.9 |
+|  7 | NULL |          19 | Mouse sem Fio       |  0.6 |      199.9 |
++----+------+-------------+---------------------+------+------------+
+7 rows in set (0,00 sec)
+```
+Veja que é muito simples alternar entre diferentes bancos de dados! e independente de qual seja a implementação, dentro do sistema o acesso a buscas e inserções é sempre transparente.
+
+---
+License
+----
+
+LGPL-3.0
+
+
+**Free Software, Hell Yeah!**
