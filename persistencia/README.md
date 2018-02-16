@@ -148,7 +148,7 @@ Observe que, o método **commonProperties()** busca as variáveis no arquivo de 
 Acessando o console no navegador temos a seguinte tela:
 
 
-[![](https://raw.githubusercontent.com/GUMGA/framework-exemplos/master/persistencia/imagens/h2Console.png)]
+![](https://raw.githubusercontent.com/GUMGA/framework-exemplos/master/persistencia/imagens/h2Console.png)
 
 Os dados de acesso são:
 ```
@@ -158,7 +158,7 @@ Password: sa
 ```
 Podemos ver que os dados de Produto estão persistidos corretamente no banco de dados
 
-[![](https://raw.githubusercontent.com/GUMGA/framework-exemplos/master/persistencia/imagens/selectH2.png)]
+![](https://raw.githubusercontent.com/GUMGA/framework-exemplos/master/persistencia/imagens/selectH2.png)
 
 
 Agora, vamos alternar para outro banco de dados. Para isso basta que adicionemos à pasta *gumgafiles* o arquivo de propriedades da aplicação.
