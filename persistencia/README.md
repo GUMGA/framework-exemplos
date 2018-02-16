@@ -157,7 +157,9 @@ User Name: sa
 Password: sa
 ```
 Podemos ver que os dados de Produto estão persistidos corretamente no banco de dados
-# selectH2
+
+[![](https://raw.githubusercontent.com/GUMGA/framework-exemplos/master/persistencia/imagens/selectH2.png)]
+
 
 Agora, vamos alternar para outro banco de dados. Para isso basta que adicionemos à pasta *gumgafiles* o arquivo de propriedades da aplicação.
 Copie o arquivo **\*/persistencia/persistencia.properties** para a pasta **\*user.home\*/gumgafiles/** e o configure de acordo com o seu banco de dados.

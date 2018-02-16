@@ -21,6 +21,8 @@
     * *Entenda o funcionamento das classes de modelo do framework para geração de entidade, id's etc.*<br>
 * [Variaveis de Ambiente](https://github.com/GUMGA/framework-exemplos/tree/master/variavelAmbiente)<br>
     * *Manipule variáveis de ambiente dentro do sistema*<br>
+* [Persistência de Dados](https://github.com/GUMGA/framework-exemplos/tree/master/persistencia)<br>
+     * *Entenda como o Gumga Framework manipula e gerencia bancos de dados na sua aplicação*<br>
 
 
 
