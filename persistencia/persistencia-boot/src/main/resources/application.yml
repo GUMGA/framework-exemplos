@@ -1,0 +1,6 @@
+server:
+  context-path: /persistencia-api
+spring:
+  h2:
+    console:
+      enabled: true
