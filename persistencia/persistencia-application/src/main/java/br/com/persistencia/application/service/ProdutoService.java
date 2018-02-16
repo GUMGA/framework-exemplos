@@ -15,7 +15,7 @@ import br.com.persistencia.domain.model.Produto;
 
 @Service
 @Transactional
-public class ProdutoService extends GumgaService<Produto, String> {
+public class ProdutoService extends GumgaService<Produto, Long> {
 
     private final static Logger LOG = LoggerFactory.getLogger(ProdutoService.class);
     private final ProdutoRepository repositoryProduto;

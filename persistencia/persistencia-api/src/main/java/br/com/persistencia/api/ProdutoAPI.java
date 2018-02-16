@@ -26,11 +26,11 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("/api/produto")
 @Transactional
-public class ProdutoAPI extends GumgaAPI<Produto, String> {
+public class ProdutoAPI extends GumgaAPI<Produto, Long> {
 
 
     @Autowired
-    public ProdutoAPI(GumgaService<Produto, String> service) {
+    public ProdutoAPI(GumgaService<Produto, Long> service) {
         super(service);
     }
 

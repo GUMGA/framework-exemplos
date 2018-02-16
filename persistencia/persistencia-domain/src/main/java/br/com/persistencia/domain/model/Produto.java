@@ -18,7 +18,8 @@ import org.hibernate.annotations.Columns;
 @Table(name = "Produto", indexes = {
     @Index(name = "Produto_gum_oi", columnList = "oi")
 })
-public class Produto extends GumgaModelUUID {
+@SequenceGenerator(name = GumgaModel.SEQ_NAME, sequenceName = "SEQ_ProdutoId")
+public class Produto extends GumgaModel<Long> {
 
 
     @Column(name = "nome")
