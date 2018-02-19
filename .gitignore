@@ -1,5 +1,7 @@
 target/
 
+**/target/
+
 .apt_generated
 .classpath
 .factorypath
