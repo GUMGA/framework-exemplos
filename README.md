@@ -23,6 +23,10 @@
     * *Manipule variáveis de ambiente dentro do sistema*<br>
 * [Persistência de Dados](https://github.com/GUMGA/framework-exemplos/tree/master/persistencia)<br>
      * *Entenda como o Gumga Framework manipula e gerencia bancos de dados na sua aplicação*<br>
+* [Tenancy](https://github.com/GUMGA/framework-exemplos/tree/master/tenancy)<br>
+     * *Organize os registros do seu sistema de forma hierárquica de maneira simples e prática*<br>
+
+
 
 
 
