@@ -20,6 +20,8 @@ import io.gumga.domain.domains.GumgaImage;
 import io.gumga.presentation.GumgaAPI;
 import org.springframework.web.bind.annotation.RequestMapping;
 import java.io.IOException;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -28,20 +30,16 @@ import org.springframework.web.multipart.MultipartFile;
 @Transactional
 public class PessoaAPI extends GumgaAPI<Pessoa, Long> {
 
+    @Autowired
+    private PessoaService pessoaService;
 
     @Autowired
     public PessoaAPI(GumgaService<Pessoa, Long> service) {
         super(service);
     }
 
-//    @Autowired
-//    private PessoaService pessoaService;
-//TODO delete comments
-//    @RequestMapping(value = "/{param}/permanent", method = RequestMethod.GET)
-//    public void deletePermanent(@PathVariable("param") Long id){
-//        System.out.println(id);
-//        pessoaService.deletePermanent(id);
-//
-//    }
-
+    @RequestMapping("/trash")
+    public List<Pessoa> trash(){
+        return pessoaService.getTrash();
+    }
 }

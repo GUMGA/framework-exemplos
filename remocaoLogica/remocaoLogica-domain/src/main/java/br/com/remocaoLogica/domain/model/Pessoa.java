@@ -21,7 +21,7 @@ import org.hibernate.annotations.Columns;
     @Index(name = "Pessoa_gum_oi", columnList = "oi")
 })
 @SequenceGenerator(name = GumgaModel.SEQ_NAME, sequenceName = "SEQ_PessoaId")
-public class Pessoa extends GumgaSharedLDModel<Long> {
+public class Pessoa extends GumgaLDModel<Long> {
 
 
     @Column(name = "nome")

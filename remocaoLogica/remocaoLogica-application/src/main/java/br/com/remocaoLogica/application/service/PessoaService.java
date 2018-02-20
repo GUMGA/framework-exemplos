@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.naming.directory.SearchResult;
 import javax.transaction.Transactional;
+
 import org.hibernate.Hibernate;
 
 import br.com.remocaoLogica.application.repository.PessoaRepository;
@@ -29,23 +30,14 @@ public class PessoaService extends GumgaService<Pessoa, Long> {
     public PessoaService(PessoaRepository repository) {
         super(repository);
         this.repositoryPessoa = repository;
-//        this.repositoryPessoa.deleteById();
-    }
-//TODO Delete comments
-//    public void deletePermanent(Long id) {
-//        System.out.println("teste");
-//
-//        repositoryPessoa.deleteById(id);
-//
-//    }
-
-    public List<Pessoa> getLixeira(){
-        QueryObject aq = new QueryObject();
-        aq.setAq(" ");
-        return repositoryPessoa.search(aq).getValues();
     }
 
-    public boolean hasData(){
+    public List<Pessoa> getTrash() {
+        List<Pessoa> list = repositoryPessoa.trash();
+        return list;
+    }
+
+    public boolean hasData() {
         return repositoryPessoa.count() > 0;
     }
 
