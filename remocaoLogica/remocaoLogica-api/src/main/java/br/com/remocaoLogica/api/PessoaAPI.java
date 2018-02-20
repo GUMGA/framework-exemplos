@@ -34,10 +34,14 @@ public class PessoaAPI extends GumgaAPI<Pessoa, Long> {
         super(service);
     }
 
-
-    @RequestMapping(value = "/{param}/permanent", method = RequestMethod.GET)
-    public String deletePermanent(@PathVariable("param") String id){
-        return id;
-    }
+//    @Autowired
+//    private PessoaService pessoaService;
+//TODO delete comments
+//    @RequestMapping(value = "/{param}/permanent", method = RequestMethod.GET)
+//    public void deletePermanent(@PathVariable("param") Long id){
+//        System.out.println(id);
+//        pessoaService.deletePermanent(id);
+//
+//    }
 
 }

@@ -9,6 +9,7 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import io.gumga.domain.domains.*;
 import io.gumga.domain.logicaldelete.GumgaLDModel;
+import io.gumga.domain.logicaldelete.GumgaSharedLDModel;
 import org.hibernate.envers.Audited;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Columns;
@@ -20,7 +21,7 @@ import org.hibernate.annotations.Columns;
     @Index(name = "Pessoa_gum_oi", columnList = "oi")
 })
 @SequenceGenerator(name = GumgaModel.SEQ_NAME, sequenceName = "SEQ_PessoaId")
-public class Pessoa extends GumgaLDModel<Long> {
+public class Pessoa extends GumgaSharedLDModel<Long> {
 
 
     @Column(name = "nome")

@@ -29,13 +29,15 @@ public class PessoaService extends GumgaService<Pessoa, Long> {
     public PessoaService(PessoaRepository repository) {
         super(repository);
         this.repositoryPessoa = repository;
+//        this.repositoryPessoa.deleteById();
     }
-
-    @Override
-    public void delete(Pessoa resource) {
-        System.out.println("teste");
-        super.delete(resource);
-    }
+//TODO Delete comments
+//    public void deletePermanent(Long id) {
+//        System.out.println("teste");
+//
+//        repositoryPessoa.deleteById(id);
+//
+//    }
 
     public List<Pessoa> getLixeira(){
         QueryObject aq = new QueryObject();
