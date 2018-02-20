@@ -134,3 +134,9 @@ SELECT * FROM PESSOA;
 |------|------|----------------|----------|--------|--------|
 | 1 | 1. | FALSE | 1.75 | Caito | 95.2 |
 | 2 | 1. | TRUE | 1.58 | Mateus | 98.4 |
+
+Você pode manipular os dados removidos logicamente dentro do seu sistema, basta que sejam implementados métodos para acesso a estes registros no banco de dados.<br>
+Como exemplo criamos uma "lixeira" no nosso projeto, que pode ser acessada na seguinte rota:
+```
+http://*servidor*/remocaoLogica-api/api/pessoa/trash
+```
