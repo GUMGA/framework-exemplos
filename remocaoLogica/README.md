@@ -115,3 +115,38 @@ O registro "Caito" não é mais retornado na resposta do servidor quando solicit
  Veja que, o registro "Caito" continua persistido, porém com o campo *GUMGA_ACTIVE* falso, representando a remoção lógica.
 
 ### Exlusão Permanente
+
+Eventualmente pode ser útil removermos permanentemente um registro do banco de dados, ou seja, de fato excluir entidades persistidas.<br>
+Para isso o Gumga Framework dispõe de uma rota específica para este fim:
+```
+Método HTTP: DELETE
+URI: /{id}/permanent
+```
+No nosso exemplo, vamos fazer uma requisição com o método DELETE na seguinte rota:
+```
+http://*servidor*/remocaoLogica-api/api/pessoa/3/permanent
+```
+Considerando que na requisição anterior removemos logicamente o registro com "id = 1", agora no banco de dados temos os seguintes valores:
+
+SELECT * FROM PESSOA;
+
+| ID   | OI   | GUMGA_ACTIVE   | ALTURA   | NOME   | PESO   |
+|------|------|----------------|----------|--------|--------|
+| 1 | 1. | FALSE | 1.75 | Caito | 95.2 |
+| 2 | 1. | TRUE | 1.58 | Mateus | 98.4 |
+
+Você pode manipular os dados removidos logicamente dentro do seu sistema, basta que sejam implementados métodos para acesso a estes registros no banco de dados.<br>
+Como exemplo criamos uma "lixeira" no nosso projeto, que pode ser acessada na seguinte rota:
+```
+http://*servidor*/remocaoLogica-api/api/pessoa/trash
+```
+
+
+---
+License
+----
+
+LGPL-3.0
+
+
+**Free Software, Hell Yeah!**
