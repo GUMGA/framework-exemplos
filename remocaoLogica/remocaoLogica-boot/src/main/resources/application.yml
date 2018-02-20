@@ -1,0 +1,6 @@
+server:
+  context-path: /remocaoLogica-api
+spring:
+  h2:
+    console:
+      enabled: true

@@ -1,10 +1,8 @@
-package br.com.gumgaModel.api.seed;
+package br.com.remocaoLogica.api.seed;
 
-import br.com.gumgaModel.domain.model.PessoaSharedAleatId;
-import br.com.gumgaModel.domain.model.PessoaSharedSeqId;
 import io.gumga.application.GumgaLoggerService;
 import io.gumga.domain.seed.AppSeed;
-import br.com.gumgaModel.configuration.security.RegisterApplication;
+import br.com.remocaoLogica.configuration.security.RegisterApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -22,27 +20,12 @@ class Seed implements ApplicationListener<ContextRefreshedEvent> {
     private GumgaLoggerService gumgaLoggerService;
 
     @Autowired
+    private PessoaSeed pessoaSeed;
+
+    @Autowired
     private RegisterApplication registerApplication;
 
     private AtomicBoolean started = new AtomicBoolean(false);
-
-    @Autowired
-    PessoaAleatorioIdSeed pessoaAleatorioIdSeed;
-
-    @Autowired
-    PessoaSequenciaIdSeed pessoaSequenciaIdSeed;
-
-    @Autowired
-    PessoaSharedSeqIdSeed pessoaSharedSeqIdSeed;
-
-    @Autowired
-    PessoaSharedAleatIdSeed pessoaSharedAleatIdSeed;
-
-    @Autowired
-    PessoaLDSeed pessoaLDSeed;
-
-    @Autowired
-    PessoaSharedLDSeed pessoaSharedLDSeed;
 
     public void onApplicationEvent(ContextRefreshedEvent event) {
         if (started.get()) {
@@ -65,15 +48,7 @@ class Seed implements ApplicationListener<ContextRefreshedEvent> {
 
     private List<AppSeed> seeds() {
         List<AppSeed> list = new LinkedList<>();
-        list.add(pessoaAleatorioIdSeed);
-        list.add(pessoaSequenciaIdSeed);
-
-        list.add(pessoaSharedAleatIdSeed);
-        list.add(pessoaSharedSeqIdSeed);
-
-        list.add(pessoaLDSeed);
-        list.add(pessoaSharedLDSeed);
-
+        list.add(pessoaSeed);
         return list;
     }
 

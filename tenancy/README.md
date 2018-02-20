@@ -1,5 +1,5 @@
 # Tenancy
----
+
 
 [![](https://avatars3.githubusercontent.com/u/13262049?s=200&v=4)](https://github.com/GUMGA/frameworkbackend)
 
@@ -25,33 +25,38 @@ Na aplicação de exemplo criamos uma modelagem simples de Produto com alguns ca
 
  ```java
  package br.com.tenancy.domain.model;
-
 //imports
+@GumgaMultitenancy
+@Audited
+@Entity(name = "Produto")
+@Table(name = "Produto", indexes = {
+        @Index(name = "Produto_gum_oi", columnList = "oi")
+})
+@SequenceGenerator(name = GumgaModel.SEQ_NAME, sequenceName = "SEQ_ProdutoId")
+public class Produto extends GumgaModel<Long> {
 
- @GumgaMultitenancy
- @Audited
- @Entity(name = "Produto")
- @Table(name = "Produto", indexes = {
-         @Index(name = "Produto_gum_oi", columnList = "oi")
- })
- @SequenceGenerator(name = GumgaModel.SEQ_NAME, sequenceName = "SEQ_ProdutoId")
- public class Produto extends GumgaModel<Long> {
+    @Column(name = "nome")
+    private String nome;
+    @Column(name = "precoCusto")
+    private Double precoCusto;
+    @Column(name = "precoVenda")
+    private Double precoVenda;
+    @Column(name = "margemLucro")
+    private Integer margemLucro;
+    @Column(name = "peso")
+    private Double peso;
 
-     @Column(name = "nome")
-     private String nome;
-     @Column(name = "precoCusto")
-     private Double precoCusto;
-     @Column(name = "precoVenda")
-     private Double precoVenda;
-     @Column(name = "margemLucro")
-     private Integer margemLucro;
-     @Column(name = "peso")
-     private Double peso;
+    public Produto() {
+    }
+    public Produto(String nome, Double precoCusto, Integer margemLucro, Double peso) {
+        this.nome = nome;
+        this.precoCusto = precoCusto;
+        this.margemLucro = margemLucro;
+        this.peso = peso;
+    }
+//Getters and Setters
+}
 
-     public Produto() {
-     }
-     //Getters and Setters
- }
  ```
  > Sobrescrevemos o método *save()* no Service para que seja gerado o valor "precoVenda" a partir do "precoCusto" + "margemLucro" (%). Você pode ver isso na classe *ProdutoService*<br>
  \*/tenancy/tenancy-application/src/main/java/br/com/tenancy/application/ProdutoService.java

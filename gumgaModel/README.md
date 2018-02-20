@@ -3,17 +3,22 @@
 
 [![](https://avatars3.githubusercontent.com/u/13262049?s=200&v=4)](https://github.com/GUMGA/frameworkbackend)
 
+*GumgaLDModel e GumgaSharedLDModel estão disponíveis a partir da versão 3.2.3*
+
   As entidades Model são de suma importância no Framework Gumga, são elas que modelam a estrutura básica de todas as outras classes do domínio da aplicação. <br>
   Ou seja, as entidades de domínio sempre vão extender de alguma delas.
 
-  São ao todo quatro classes de modelo cada uma com especifidades que vamos abordar logo mais:
+  São ao todo seis classes de modelo cada uma com especifidades que vamos abordar logo mais:
 
   * *GumgaModelUUID*
   * *GumgaModel*
+  * *GumgaLDModel*
   * *GumgaSharedModelUUID*
   * *GumgaSharedModel*
+  * *GumgaSharedLDModel*
 
-A principal diferênça entre cada uma delas é a forma de geração do id do objeto instanciado e a forma de manipulação do oi (gerenciamento de organizações)<br>
+A principal diferença entre cada uma delas é a forma de geração do id do objeto instanciado e a forma de manipulação do oi (gerenciamento de organizações)<br>
+No caso das \**LDModel* é implementado um campo para controle de remoção lógica.
 
   #### GumgaModelUUID
   Neste modelo o id gerado é um valor aleatório de 256 bits (32 caracteres alfanuméricos)<br>
@@ -108,7 +113,11 @@ public class PessoaAleatorioId extends GumgaModelUUID {
 
 ```
 Desta maneira, quando instanciamos um objeto desta entidade temos o seguinte:
-> Implementamos um seed para gerar estas instâncias no banco de dados, para mais informações sobre como trabalhar com seeds consulte o topico "Seeds" no repositório
+> Implementamos um seed para gerar estas instâncias no banco de dados, para mais informações sobre como trabalhar com seeds consulte o topico "Seeds" no repositório.<br>
+Segue a rota para acesso a esses registros:
+```
+http://*servidor*/gumgaModel-api/api/pessoaaleatorioid
+```
 
 ```json
 {
@@ -265,6 +274,9 @@ public abstract class GumgaModel<ID extends Serializable> implements GumgaIdable
 
 ```
 O resultado que temos ao gravar instâncias baseadas nesse modelo é este:
+```
+Rota: http://*servidor*/gumgaModel-api/api/pessoasequeciaid
+```
 ```json
 {
     "pageSize": 10,
@@ -367,15 +379,132 @@ public class PessoaSequeciaId extends GumgaModel<Long> {
 ```
 Observe que, adicionamos a anotação @SequenceGenerator passando um nome para a sequência desejada, isto é para que o hibernate possa manipular corretamente a sequência dos objetos
 
-Outro detalhe importante, é que no GumgaModel devemos informar o tipo do id que vamos manipular, que deve ser Long ( GumgaModel < Long > )
+Outro detalhe importante é que no GumgaModel devemos informar o tipo do id que vamos manipular, que no caso é Long ( GumgaModel < Long > )
 
 > Se você gerou seus domínios pelo gerador, será necessário adequar este tipo de objeto nas entidades de Serviço, API etc...
 
-  #### GumgaSharedModelUUID e GumgaSharedModel
+#### GumgaLDModel
 
-  Estas duas entidades seguem o mesmo padrão das vistas anteriormente (geração de id aleatório e sequencial), porém estas tem o atribulo de compartilhamento.
-  Elas adicionam a possibilidade de manipulação de usuário e organização do objeto.
-  Isso é útil quando trabalhamos com objetos que são compartilhados entre usuários e organizações distintas.
+Este modelo extende da *GumgaModel*, e implementa um mecanismo para o controle de remoção lógica no banco de dados.
+> Veja mais sobre Remoção Lógica no exemplo específico.<br>
+Lembramos que esta funcionalidade está disponível a partir da versão 3.2.3 do Gumga Framework
+
+Ao utilizar um domínio com esta superclasse devemos seguir o mesmo padrão de id sequencial que vimos anteriormente. Segue a modelagem da classe:
+```java
+package io.gumga.domain.logicaldelete;
+//imports
+@MappedSuperclass
+public class GumgaLDModel<ID extends Serializable> extends GumgaModel<ID> {
+
+    @Column(name = "gumga_active")
+    protected Boolean gumgaActive;
+
+    public GumgaLDModel() {
+        super();
+        gumgaActive = true;
+    }
+    public GumgaLDModel(GumgaOi oi) {
+        super(oi);
+        this.gumgaActive = gumgaActive;
+    }
+    public Boolean getGumgaActive() {
+        return gumgaActive;
+    }
+    public void setGumgaActive(Boolean gumgaActive) {
+        this.gumgaActive = gumgaActive;
+    }
+}
+```
+
+Veja como ficam os registros neste modelo:
+```
+Rota: http://*servidor*/gumgaModel-api/api/pessoaremocaologica
+```
+```json
+{
+    "pageSize": 10,
+    "count": 7,
+    "start": 0,
+    "values": [
+        {
+            "id": 1,
+            "oi": null,
+            "gumgaActive": true,
+            "nome": "Felipe S.",
+            "idade": 25,
+            "altura": 1.72,
+            "peso": 108.5
+        },
+        {
+            "id": 2,
+            "oi": null,
+            "gumgaActive": true,
+            "nome": "Caio M.",
+            "idade": 25,
+            "altura": 1.61,
+            "peso": 98.6
+        },
+        {
+            "id": 3,
+            "oi": null,
+            "gumgaActive": true,
+            "nome": "Mateus M.",
+            "idade": 21,
+            "altura": 1.52,
+            "peso": 95
+        },
+        {
+            "id": 4,
+            "oi": null,
+            "gumgaActive": true,
+            "nome": "Gabi P.",
+            "idade": 18,
+            "altura": 1.59,
+            "peso": 52.3
+        },
+        {
+            "id": 5,
+            "oi": null,
+            "gumgaActive": true,
+            "nome": "William D.",
+            "idade": 26,
+            "altura": 1.82,
+            "peso": 78.7
+        },
+        {
+            "id": 6,
+            "oi": null,
+            "gumgaActive": true,
+            "nome": "Lusca K.",
+            "idade": 22,
+            "altura": 1.75,
+            "peso": 49.8
+        },
+        {
+            "id": 7,
+            "oi": null,
+            "gumgaActive": true,
+            "nome": "Luiz P.",
+            "idade": 45,
+            "altura": 1.79,
+            "peso": 85
+        }
+    ]
+}
+```
+
+
+
+
+  #### Shared Model
+
+  * GumgaSharedModelUUID
+  * GumgaSharedModel
+  * GumgaSharedLDModel
+
+Estas entidades seguem o mesmo padrão das vistas anteriormente (geração de id aleatório, sequencial e campo lógico), porém possuem o atribulo de compartilhamento.
+Elas adicionam a possibilidade de manipulação de usuário e organização do objeto.
+Isso é útil quando trabalhamos com objetos que são compartilhados entre usuários e organizações distintas.
 
 Os modos de geração de id seguem os mesmos de GumgaModelUUID (id aleatório) e GumgaModel(id sequencial)
 Os campos adicionais são estes:
@@ -438,6 +567,14 @@ E da classe *GumgaSharedModelUUID*:
             "peso": 95
         },
 ```
+Você pode visualizar os dados cadastrados em cada uma dessas classes nas seguintes rotas:
+```
+PessoaSharedAleatId: http://*servidor*/gumgaModel-api/api/pessoasharedaleatid
+PessoaSharedSeqId: http://*servidor*/gumgaModel-api/api/pessoasharedseqid
+PessoaSharedRemocaoLogica: http://*servidor*/gumgaModel-api/api/pessoasharedremocaologica
+```
+
+
 ---
 License
 ----
