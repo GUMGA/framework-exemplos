@@ -140,3 +140,13 @@ Como exemplo criamos uma "lixeira" no nosso projeto, que pode ser acessada na se
 ```
 http://*servidor*/remocaoLogica-api/api/pessoa/trash
 ```
+
+
+---
+License
+----
+
+LGPL-3.0
+
+
+**Free Software, Hell Yeah!**
