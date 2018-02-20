@@ -3,6 +3,8 @@
 
 [![](https://avatars3.githubusercontent.com/u/13262049?s=200&v=4)](https://github.com/GUMGA/frameworkbackend)
 
+*Disponível a partir da versão 3.2.3*
+
 A fim de evitar a destruição de dados persistidos o Gumga Framework dispõe de um modelo de entidade capaz de gerir a exclusão de registros no banco de dados.<br>
 Trata-se da super classe **GumgaLDModel**, uma classe de modelagem com *id* sequencial que possui um campo lógico para a inativação de objetos (*gumgaActive*).
 

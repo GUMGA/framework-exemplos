@@ -38,6 +38,12 @@ class Seed implements ApplicationListener<ContextRefreshedEvent> {
     @Autowired
     PessoaSharedAleatIdSeed pessoaSharedAleatIdSeed;
 
+    @Autowired
+    PessoaLDSeed pessoaLDSeed;
+
+    @Autowired
+    PessoaSharedLDSeed pessoaSharedLDSeed;
+
     public void onApplicationEvent(ContextRefreshedEvent event) {
         if (started.get()) {
             return;
@@ -64,6 +70,9 @@ class Seed implements ApplicationListener<ContextRefreshedEvent> {
 
         list.add(pessoaSharedAleatIdSeed);
         list.add(pessoaSharedSeqIdSeed);
+
+        list.add(pessoaLDSeed);
+        list.add(pessoaSharedLDSeed);
 
         return list;
     }
