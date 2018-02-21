@@ -17,4 +17,5 @@ public interface PessoaRepository extends GumgaCrudRepository<Pessoa, Long> {
      */
     @Query("from Pessoa p where p.gumgaActive is false")
     List<Pessoa> trash();
+
 }
