@@ -6,7 +6,7 @@ import io.gumga.domain.repository.GumgaQueryDSLRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProdutoRepository extends GumgaQueryDSLRepository<Produto, Long> {
+public interface ProdutoRepositoryQueryDSL extends GumgaQueryDSLRepository<Produto, Long> {
 
 
 }
