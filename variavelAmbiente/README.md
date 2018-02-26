@@ -61,7 +61,7 @@ hibernate.hbm2ddl.auto = update
 #url.host = http://ip do segurança
 #security.token = token longo da aplicação
 ```
-Este é o arquivo padrão implementado pelo Framework, como se pode ver já encontramos nele um modelo de configuração básica para o funcionamento do sistema. São informações para o funcionamento do Hibernate, conexão com banco de dados (modelo para MySQL, Oracle, PostGreSQL e H2) e endereço de acesso ao Segurança.
+Este é o arquivo padrão implementado pelo Framework, como se pode ver já encontramos nele um modelo de configuração básica para o funcionamento do sistema. São informações para o funcionamento do Hibernate, conexão com banco de dados (modelo para MySQL, Oracle, PostGreSQL e H2) e endereço de acesso ao Segurança, configurações para envio de email, etc.
 
 Este arquivo fica alocado por padrão na pasta *"gumgafiles"* que é criada na raiz da pasta do usuário do sistema, e possui o nome do projeto (caso tenha sido gerado automaticamente)<br>
 No Linux Ubuntu por exemplo, o diretório é o seguinte:
