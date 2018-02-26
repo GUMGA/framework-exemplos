@@ -27,12 +27,8 @@
   * *Organize os registros do seu sistema de forma hierárquica de maneira simples e prática*<br>
 * [Remoção Lógica](https://github.com/GUMGA/framework-exemplos/tree/master/remocaoLogica)<br>
   * *Proteja seus registros no banco de dados utilizando remoção lógica*<br>
-
-
-
-
-
-
+* [Repositórios de Busca](https://github.com/GUMGA/framework-exemplos/tree/master/repositorioBusca)<br>
+   * *Entenda sobre os mecanismos de consulta a dados utilizados no Gumga Framework*<br>
 
 License
 ----
