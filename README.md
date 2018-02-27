@@ -20,7 +20,7 @@
 * [GumgaModel](https://github.com/GUMGA/framework-exemplos/tree/master/gumgaModel)<br>
   * *Entenda o funcionamento das classes de modelo do framework para geração de entidade, id's etc.*<br>
 * [Variaveis de Ambiente](https://github.com/GUMGA/framework-exemplos/tree/master/variavelAmbiente)<br>
-  * *Manipule variáveis de ambiente dentro do sistema*<br>
+  * *Manipule variáveis de ambiente dentro do seu sistema*<br>
 * [Persistência de Dados](https://github.com/GUMGA/framework-exemplos/tree/master/persistencia)<br>
   * *Entenda como o Gumga Framework manipula e gerencia bancos de dados na sua aplicação*<br>
 * [Tenancy](https://github.com/GUMGA/framework-exemplos/tree/master/tenancy)<br>
@@ -28,7 +28,10 @@
 * [Remoção Lógica](https://github.com/GUMGA/framework-exemplos/tree/master/remocaoLogica)<br>
   * *Proteja seus registros no banco de dados utilizando remoção lógica*<br>
 * [Repositórios de Busca](https://github.com/GUMGA/framework-exemplos/tree/master/repositorioBusca)<br>
-   * *Entenda sobre os mecanismos de consulta a dados utilizados no Gumga Framework*<br>
+  * *Entenda sobre os mecanismos de consulta a dados utilizados no Gumga Framework*<br>
+* [GumgaQuery e QueryObject](https://github.com/GUMGA/framework-exemplos/tree/master/gumgaQuery)<br>
+  * *Trabalhe com buscas relacionais concatenando objetos gQuery*<br>
+
 
 License
 ----

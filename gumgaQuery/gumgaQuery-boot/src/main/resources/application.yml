@@ -1,0 +1,6 @@
+server:
+  context-path: /gumgaQuery-api
+spring:
+  h2:
+    console:
+      enabled: true
