@@ -31,6 +31,8 @@
   * *Entenda sobre os mecanismos de consulta a dados utilizados no Gumga Framework*<br>
 * [GumgaQuery e QueryObject](https://github.com/GUMGA/framework-exemplos/tree/master/gumgaQuery)<br>
   * *Trabalhe com buscas relacionais concatenando objetos gQuery*<br>
+* [Upload de Arquivos](https://github.com/GUMGA/framework-exemplos/tree/master/fileUpload)<br>
+  * *Manipule arquivos do seu sistema web utilizando requisições HTTP*<br>
 
 
 License

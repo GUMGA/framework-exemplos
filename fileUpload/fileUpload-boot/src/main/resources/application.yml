@@ -1,0 +1,6 @@
+server:
+  context-path: /fileUpload-api
+spring:
+  h2:
+    console:
+      enabled: true
