@@ -33,7 +33,10 @@
   * *Trabalhe com buscas relacionais concatenando objetos gQuery*<br>
 * [Upload de Arquivos](https://github.com/GUMGA/framework-exemplos/tree/master/fileUpload)<br>
   * *Manipule arquivos do seu sistema web utilizando requisições HTTP*<br>
+* [Arquivo de Log](https://github.com/GUMGA/framework-exemplos/tree/master/gLogService)<br>
+  * *Aprenda a manipular logs do seu sistema em arquivos externos*<br>
 
+  
 
 License
 ----
