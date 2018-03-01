@@ -112,8 +112,8 @@ Como registramos uma imagem no sistema podemos entrar com a seguinte diretamente
 ```
 http://*servidor*/fileUpload-api/api/document/get/1
 ```
-![](Resources/print2.png)
 
+![](Resources/print2.png)
 
 
 License
