@@ -35,8 +35,11 @@
   * *Manipule arquivos do seu sistema web utilizando requisições HTTP*<br>
 * [Arquivo de Log](https://github.com/GUMGA/framework-exemplos/tree/master/gLogService)<br>
   * *Aprenda a manipular logs do seu sistema em arquivos externos*<br>
+* [Campos Customizados](https://github.com/GUMGA/framework-exemplos/tree/master/customFields)<br>
+    * *Crie campos customizados para suas entidades sem modificar a estrutura do banco de dados*<br>
 
-  
+
+
 
 License
 ----

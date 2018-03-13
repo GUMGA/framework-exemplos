@@ -1,5 +1,5 @@
 server:
-  context-path: /gLogService-api
+  context-path: /customFields-api
 spring:
   h2:
     console:
