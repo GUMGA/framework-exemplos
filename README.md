@@ -37,7 +37,8 @@
   * *Aprenda a manipular logs do seu sistema em arquivos externos*<br>
 * [Campos Customizados](https://github.com/GUMGA/framework-exemplos/tree/master/customFields)<br>
     * *Crie campos customizados para suas entidades sem modificar a estrutura do banco de dados*<br>
-
+* [GumgaNLP - Processamento de Linguagem Natural](https://github.com/GUMGA/framework-exemplos/tree/master/gumgaNLP)<br>
+    * *Utilize expressões de linguagem natural para interagir e dar acessibilidade ao seu sistema*<br>
 
 
 
