@@ -105,10 +105,11 @@ http://*servidor*/gumgaNLP-api/api/produto/texto
 ```
 Chaves Header:
 
-| texto  | crie um produto com o nome Nabo na categoria Vegetais com custo 2, venda 35 e peso 456 g |
+| Chave  | Valor                                                                                    |
 |--------|------------------------------------------------------------------------------------------|
+| texto  | crie um produto com o nome Nabo na categoria Vegetais com custo 2, venda 35 e peso 456 g |
 | verbos | criar                                                                                    |
-Para fins de melhor entendimento
+
 
 Ao fazer essa requisição obtemos o seguinte resultado:
 ```JSON
@@ -127,8 +128,9 @@ Ao fazer essa requisição obtemos o seguinte resultado:
 
 Podemos repetir esse procedimento de diversas maneiras, sempre que o gerenciador conseguir entender a frase teremos como resposta uma instância de produto
 
-| texto  | gostaria de criar um produto na categoria Vestuário com o nome Camisa, custo 45 e venda 90 e atribua o peso para 400 gramas |
+| Chave  | Valor                                                                                                                       |
 |--------|-----------------------------------------------------------------------------------------------------------------------------|
+| texto  | gostaria de criar um produto na categoria Vestuário com o nome Camisa, custo 45 e venda 90 e atribua o peso para 400 gramas |
 | verbos | criar, atribuir                                                                                                             |
 
 Considerando que salvamos a instância de Produto criada no método da classe de serviço, podemos verificar como ficaram persistidas nossas instâncias geradas a partir das frases de linguagem natural:
