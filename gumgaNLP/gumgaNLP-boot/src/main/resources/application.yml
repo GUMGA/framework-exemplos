@@ -1,0 +1,6 @@
+server:
+  context-path: /gumgaNLP-api
+spring:
+  h2:
+    console:
+      enabled: true
