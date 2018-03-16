@@ -39,7 +39,8 @@
     * *Crie campos customizados para suas entidades sem modificar a estrutura do banco de dados*<br>
 * [GumgaNLP - Processamento de Linguagem Natural](https://github.com/GUMGA/framework-exemplos/tree/master/gumgaNLP)<br>
     * *Utilize expressões de linguagem natural para interagir e dar acessibilidade ao seu sistema*<br>
-
+* [Templates com FreeMaker](https://github.com/GUMGA/framework-exemplos/tree/master/templatesFreemaker)<br>
+    * *Crie modelos e gere códigos padronizados com variaveis em tempo de execução*<br>
 
 
 License
