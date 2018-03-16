@@ -3,8 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>br.com</groupId>
-    <artifactId>gumgaNLP</artifactId>
-    <name>gumgaNLP</name>
+    <artifactId>templatesFreemaker</artifactId>
+    <name>templatesFreemaker</name>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
@@ -64,42 +64,42 @@
             <!-- DEPENDENCIAS DE Módulos    -->
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>gumgaNLP-domain</artifactId>
+                <artifactId>templatesFreemaker-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>gumgaNLP-configuration</artifactId>
+                <artifactId>templatesFreemaker-configuration</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>gumgaNLP-infrastructure</artifactId>
-                <version>${project.version}</version>
-            </dependency>ee
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>gumgaNLP-application</artifactId>
+                <artifactId>templatesFreemaker-infrastructure</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>gumgaNLP-gateway</artifactId>
+                <artifactId>templatesFreemaker-application</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>gumgaNLP-api</artifactId>
+                <artifactId>templatesFreemaker-gateway</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>gumgaNLP-presentation</artifactId>
+                <artifactId>templatesFreemaker-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>gumgaNLP-boot</artifactId>
+                <artifactId>templatesFreemaker-presentation</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>templatesFreemaker-boot</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -365,13 +365,13 @@
         </pluginManagement>
     </build>
   <modules>
-    <module>gumgaNLP-domain</module>
-    <module>gumgaNLP-configuration</module>
-    <module>gumgaNLP-infrastructure</module>
-    <module>gumgaNLP-application</module>
-    <module>gumgaNLP-gateway</module>
-    <module>gumgaNLP-api</module>
-    <module>gumgaNLP-boot</module>
+    <module>templatesFreemaker-domain</module>
+    <module>templatesFreemaker-configuration</module>
+    <module>templatesFreemaker-infrastructure</module>
+    <module>templatesFreemaker-application</module>
+    <module>templatesFreemaker-gateway</module>
+    <module>templatesFreemaker-api</module>
+    <module>templatesFreemaker-boot</module>
     
     
   </modules>
