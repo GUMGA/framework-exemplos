@@ -1,0 +1,6 @@
+server:
+  context-path: /criptografiaJasypt-api
+spring:
+  h2:
+    console:
+      enabled: true

@@ -41,6 +41,8 @@
     * *Utilize expressões de linguagem natural para interagir e dar acessibilidade ao seu sistema*<br>
 * [Templates com FreeMaker](https://github.com/GUMGA/framework-exemplos/tree/master/templatesFreemaker)<br>
     * *Crie modelos e gere códigos padronizados com variaveis em tempo de execução*<br>
+* [Criptografia com Jasypt](https://github.com/GUMGA/framework-exemplos/tree/master/criptografiaJasypt)<br>
+    * *Adicione facilmente uma camada de criptografia aos seus dados persistidos*<br>
 
 
 License
