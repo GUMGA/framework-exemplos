@@ -23,7 +23,7 @@ public class UsuarioAPI extends GumgaAPI<Usuario, String> {
 
     @Autowired
     public UsuarioAPI(@Qualifier("usuarioService") GumgaService<Usuario, String> service,
-                     LoginService<Usuario> loginService) {
+                      LoginService<Usuario> loginService) {
         super(service);
         this.loginService = loginService;
     }

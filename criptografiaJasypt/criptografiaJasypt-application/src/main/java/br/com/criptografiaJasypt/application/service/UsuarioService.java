@@ -7,7 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import javax.transaction.Transactional;
+
 import org.hibernate.Hibernate;
 
 import br.com.criptografiaJasypt.application.repository.UsuarioRepository;
@@ -37,24 +39,34 @@ public class UsuarioService extends GumgaService<Usuario, String> implements Log
         return super.save(resource);
     }
 
-    public void befreSave(Usuario user){
-        user.setSenha(encryptPassword.encryptPassword(user.getSenha()));
+    /**
+     * Método que faz a conferência da senha informada pelo usuário com
+     * a senha criptografada registrada no banco
+     * @param usuario
+     * @param senha
+     * @return
+     */
+    private Boolean verificaSenha(Usuario usuario, String senha) {
+
+        return encryptPassword.isPasswordCorrect(senha, usuario.getSenha());
     }
 
-    private Boolean verificaSenha(Usuario usuario, String senha){
-
-            return encryptPassword.isPasswordCorrect(senha, usuario.getSenha());
-    }
-
-    public Object login(String login, String senha){
+    /**
+     * Este método recebe um usuário e uma senha e faz uma busca pelo login,
+     * caso haja um usuário, ele faz a comparação das senhas
+     * @param login
+     * @param senha
+     * @return
+     */
+    public Object login(String login, String senha) {
         Usuario usuario = repositoryUsuario.findByLoginEquals(login);
-        if (usuario != null){
-            if (verificaSenha(usuario, senha)){
+        if (usuario != null) {
+            if (verificaSenha(usuario, senha)) {
                 return usuario;
-            }else{
+            } else {
                 return "Senha Incorreta";
             }
-        }else{
+        } else {
             return "Usuário não encontrado";
         }
     }
