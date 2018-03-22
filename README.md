@@ -43,6 +43,8 @@
     * *Crie modelos e gere códigos padronizados com variaveis em tempo de execução*<br>
 * [Criptografia com Jasypt](https://github.com/GUMGA/framework-exemplos/tree/master/criptografiaJasypt)<br>
     * *Adicione facilmente uma camada de criptografia aos seus dados persistidos*<br>
+* [Registros Compartilhados](https://github.com/GUMGA/framework-exemplos/tree/master/registrosCompartilhados)<br>
+    * *Tenha registros comuns para diversas organizações utilizando discriminação por coluna*<br>
 
 
 License
