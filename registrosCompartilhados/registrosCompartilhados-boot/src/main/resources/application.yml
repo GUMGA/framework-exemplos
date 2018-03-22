@@ -1,0 +1,6 @@
+server:
+  context-path: /registrosCompartilhados-api
+spring:
+  h2:
+    console:
+      enabled: true
