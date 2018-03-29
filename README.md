@@ -45,6 +45,13 @@
     * *Adicione facilmente uma camada de criptografia aos seus dados persistidos*<br>
 * [Registros Compartilhados](https://github.com/GUMGA/framework-exemplos/tree/master/registrosCompartilhados)<br>
     * *Tenha registros comuns para diversas organizações utilizando discriminação por coluna*<br>
+* [Informações do Usuário](https://github.com/GUMGA/framework-exemplos/tree/master/informacoesDoUsuario)<br>
+    * *Obtenha informações do dono da requisição e as acesse de qualquer lugar dentro do sistema*<br>
+
+
+Não encontrou o que buscava?
+Entre em contato conosco!<br>
+suporte@gumga.com.br
 
 
 License
